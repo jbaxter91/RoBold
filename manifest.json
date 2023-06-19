@@ -3,6 +3,7 @@
     "name": "RoBold - Bionic Reading",
     "version": "1.0",
     "permissions": [
+      "storage",
       "activeTab",
       "http://*/*",
       "https://*/*"
@@ -12,7 +13,8 @@
       "persistent": false
     },
     "browser_action": {
-      "default_title": "Boldify First Letter"
+      "default_title": "Boldify First Letter",
+      "default_popup": "popup.html"
     }
   }
   

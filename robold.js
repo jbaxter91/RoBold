@@ -40,7 +40,12 @@ function processNodes(nodesToTransform) {
 
 
 function processText() {
-    console.log("Robold is processing text")
+    console.log("Robold is processing text");
+
+    chrome.storage.sync.get('switchState', function(data) {
+        if (data.switchState !== true) {
+            return;
+        }
 
     var walker = document.createTreeWalker(
         document.body,
@@ -83,6 +88,8 @@ function processText() {
     processNodes(nodesToTransform.map(function(item) {
         return item.node;
     }));
+
+});
 }
 
 // Run the processing when the page is idle.
